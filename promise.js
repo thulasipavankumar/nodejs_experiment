@@ -11,7 +11,6 @@ const confuse = () => new Promise((resolve, reject) => {
                     },(1000)*10) // execute after 10 sec
                 });
         }
-        retryLogic(5);
     }
+    retryLogic(5);
 });
-
