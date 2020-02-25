@@ -14,3 +14,12 @@ const confuse = () => new Promise((resolve, reject) => {
     }
     retryLogic(5);
 });
+
+
+const greetUser = (username) => Promise.resolve("Hola "+username);
+greetUser("pavan kumar ")                  // <--- first promise 
+.then(val=>{
+    console.log(val)
+    return val                             //<---- second promise
+}).then(greetUser("tulasi"))
+.then(value=>console.log("excepted ",value))    // <------     since 1st promise value is not consumed if will reflect here
